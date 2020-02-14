@@ -19,7 +19,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '', // Add title!
+      title: 'Get-a-Doctor',
       template: './src/index.html',
       inject: 'body'
     }),
@@ -36,11 +36,11 @@ module.exports = {
       {
         test: /\.(png|jp(e*)g|svg)$/,
         use: [{
-            loader: 'url-loader',
-            options: {
-                limit: 8000,
-                name: 'images/[hash]-[name].[ext]'
-            }
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]'
+          }
         }]
       },
       {

@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "Get-a-Doctor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Find a doctor based off of your symptoms or any given name",
   "main": "main.js",
   "scripts": {
     "build": "webpack --mode development",
