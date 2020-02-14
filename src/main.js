@@ -5,11 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 function getDoctors(doctors) {
-  if (doctors === false) {
+  if (doctors.result === 'none') {
     $('.error').html('Looks like theres no doctors in the area that meet that criteria. Try entering a one-word symptom, or name.');
   } else {
+
     let output = $('.output');
-    doctors.forEach(doctor => {
+    doctors.jsonifiedDoctors.forEach(doctor => {
       output.append(`<h4>${doctor.profile.first_name} ${doctor.profile.last_name}, ${doctor.profile.title}</h4>
       <p class="address">
         ${doctor.practices[0].visit_address.street}<br>
@@ -33,7 +34,15 @@ async function order(issue, name) {
   } else {
     let doctors = new Doctors(issue, name);
     await doctors.getFetch();
-    await getDoctors(doctors.jsonifiedDoctors);
+    await getDoctors(doctors);
+    if (doctors.jsonifiedDoctors === false) {
+      if (doctors.status >= 400 && doctors.status < 500) {
+        $('.error').html(`Uh oh! ${doctors.status}: Client Side Error`);
+      } else if (doctors.status >= 500) {
+        $('.error').html(`Uh oh! ${doctors.status}: Server Side Error`);
+      }
+    }
+
   }
 }
 $(document).ready(function () {
