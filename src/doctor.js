@@ -13,7 +13,6 @@ export class Doctors {
       if (this.jsonifiedDoctors.length < 1) {
         this.jsonifiedDoctors = false;
       }
-      console.log('response is:', jsonResponse);
       console.log('specified response is:', this.jsonifiedDoctors);
     } catch (error) {
       console.log('oh no! error!:', error.message);
