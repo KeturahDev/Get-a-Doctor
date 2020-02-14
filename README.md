@@ -18,7 +18,7 @@ This application will help you find the right doctor for you! Enter in any sympt
 | User can input a symptom and recieve a list of doctor's names | 'tooth ache' *enter* | *list of doctors appear* |
 | User is told to fill in at least one of inputs if submitting a blank form | symptom:'', name:'' *enter* | 'please fill in at least one of the inputs to recieve a list of doctors' |
 | User can input a name and recieve a list of doctor's name that relate | 'Wang' *enter* | *list of doctors with 'Wang' in their name appear* |
-| List appearing can show full name of Dr, address, phone number, website, and ability to accept new patients | 'tooth ache' *enter* | *list of doctors with tooth ache as their specialty appear, along with their information* |
+| List appearing can show full name of Dr, address, phone number, bio, and ability to accept new patients | 'tooth ache' *enter* | *list of doctors with tooth ache as their specialty appear, along with their information* |
 | Application warns user when the API call does not recieve a 200 status | *mess up API call* | 'Oops! something went wrong with that request!' |
 
 
