@@ -13,7 +13,6 @@ This application will help you find the right doctor for you! Enter in any sympt
 
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------------:|
-| User can input a symptom and recieve a doctor's name | 'toothache' *enter* | *doctor's name appears* |
 | User can input a symptom and recieve a doctor's name from Portland area | 'toothache' *enter* | *doctor's name appears* |
 | User can input a symptom and recieve a list of doctor's name | 'toothache' *enter* | *list of doctors appear* |
 | User can input a name and recieve a list of doctor's name that relate | 'Wang' *enter* | *list of doctors with 'Wang' in their name appear* |
