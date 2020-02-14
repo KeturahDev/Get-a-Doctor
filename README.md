@@ -1,6 +1,6 @@
 # Find-a-Doctor
 
-#### _Week 6 Friday Project for Epicodus_, _7th Feb. 2020_
+#### _Week 6 Friday Project for Epicodus_, _14th Feb. 2020_
 
 #### By _**Keturah Howard**_
 
