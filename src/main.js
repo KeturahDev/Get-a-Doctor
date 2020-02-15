@@ -5,22 +5,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 function getDoctors(doctors) {
-  console.log('in get drs')
+  // Error Handling ---------------------------
   if (doctors.result === 'none') {
     $('.error').html('Looks like theres no doctors in the area that meet that criteria. Try entering a one-word symptom, or name.');
   }
   if (doctors.jsonifiedDoctors === false) {
-    console.log('in false')
-    // $('.error').html(`Error! ${doctors.status}`);
     if (doctors.status >= 400 && doctors.status < 500) {
       $('.error').html(`Uh oh! Error:${doctors.status}.. Client Side Error`);
     } else if (doctors.status >= 500) {
       $('.error').html(`Uh oh! Error: ${doctors.status}.. Server Side Error`);
-    } else if (doctors.result === 'none') {
-      $('.error').html('Looks like theres no doctors in the area that meet that criteria. Try entering a one-word symptom, or name.');
     }
   } else {
-    console.log('in true')
+    // ------------------------------------------
     let output = $('.output');
     doctors.jsonifiedDoctors.forEach(doctor => {
       output.append(`<h4>${doctor.profile.first_name} ${doctor.profile.last_name}, ${doctor.profile.title}</h4>
@@ -40,22 +36,13 @@ function getDoctors(doctors) {
     });
   }
 }
-
 async function order(issue, name) {
   if (name === '' && issue === '') {
     $('.error').html('Please fill in at least one of the inputs to recieve a list of doctors.');
   } else {
     let doctors = new Doctors(issue, name);
     await doctors.getFetch();
-    // if (doctors.jsonifiedDoctors === false) {
-    //   if (doctors.status >= 400 && doctors.status < 500) {
-    //     $('.error').html(`Uh oh! ${doctors.status}: Client Side Error`);
-    //   } else if (doctors.status >= 500) {
-    //     $('.error').html(`Uh oh! ${doctors.status}: Server Side Error`);
-    //   }
-    // }
     await getDoctors(doctors);
-
   }
 }
 $(document).ready(function () {
