@@ -13,11 +13,14 @@ export class Doctors {
       console.log(fetchedResponse.status)
 
       if (fetchedResponse.ok && fetchedResponse.status == 200) {
-        if (this.jsonifiedDoctors.length < 1) {
-          this.result = 'none';
-        }
         let jsonResponse = await fetchedResponse.json();
         this.jsonifiedDoctors = jsonResponse.data;
+        if (this.jsonifiedDoctors.length < 1) {
+          this.result = 'none';
+        } else {
+          this.result = '';
+        }
+        console.log('result', this.result)
       } else {
         this.jsonifiedDoctors = false;
         this.status = fetchedResponse.status;
