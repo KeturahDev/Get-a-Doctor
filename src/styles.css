@@ -1,0 +1,13 @@
+body{
+  background-color: rgb(163, 199, 199)
+}
+td, th {
+  padding-right: 20px;
+}
+.bio{
+  margin: 30px;
+}
+.address {
+  font-size: 0.8em;
+  color: rgb(29, 47, 123);
+}
