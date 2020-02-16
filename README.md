@@ -37,6 +37,10 @@ _Next, install npm in the project directory_
 6. Open the contents of the directory in a text editor or IDE of your choice (e.g., to open the contents of the directory in Visual Studio Code, enter the command "code ." in the Terminal).
 7. Open index.html in a browser of your choice (e.g., Google Chrome).
 
+_Installing you're own API key:_
+1. generate your individual API key by signing up for one on [this website](https://developer.betterdoctor.com/)
+2. Place your new API in an .env file at the top level of your directory (which you will create through either the terminal by changing directory intp the project and typing 'touch .env' or through right clicking over the project name on the left-heand side of VSCode interface and typing .env). Set it equal to what you'll call it by later- spelling and capitialization all identical. For example, I called it by ${process.env.API\_KEY}, so in my .env file its looks like 'API_KEY = xxxxxxxxxx', where the x's are my key. for your convenience, just set the API reference to the same format in your .env file so you dont have to change it in the doctors.js file.
+
 ## Technologies Used
 
 * Git
@@ -51,12 +55,14 @@ _Next, install npm in the project directory_
 * Jest
 * VS Code
 * Bootstrap
+* Dotenv
+* [BetterDoctor API](https://developer.betterdoctor.com/)
 
 ## Known Bugs
-Currently no known bugs.
+Currently there is one known bug where inputting symptoms that can be known as names will bring up doctors with that name, such as 'rash'. 
 
 ## Contact Info 
-Currently there are no known bugs, however, if there are any issues running this website I would love feedback! Please email me at keturah.dev@gmail.com.
+Currently there is one known bug, however, if there are any issues running this website I would love feedback! Please email me at keturah.dev@gmail.com.
 
 ## License
 
